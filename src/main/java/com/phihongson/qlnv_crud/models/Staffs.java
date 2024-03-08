@@ -19,8 +19,6 @@ public class Staffs {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Temporal(TemporalType.DATE)
     private Date birthday;
-    @Column(length = 500)
-    private String photo;
     @Column(length = 100)
     private String email;
     @Column(length = 12)
@@ -45,12 +43,11 @@ public class Staffs {
         this.records = records;
     }
 
-    public Staffs(String id, String name, boolean gender, Date birthday, String photo, String email, String phone, Float salary, String notes, Departs departs) {
+    public Staffs(String id, String name, boolean gender, Date birthday, String email, String phone, Float salary, String notes, Departs departs) {
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.birthday = birthday;
-        this.photo = photo;
         this.email = email;
         this.phone = phone;
         this.salary = salary;
@@ -88,14 +85,6 @@ public class Staffs {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
     }
 
     public String getEmail() {

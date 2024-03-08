@@ -1,11 +1,14 @@
 package com.phihongson.qlnv_crud.service;
 
+import com.phihongson.qlnv_crud.models.Departs;
 import com.phihongson.qlnv_crud.models.Staffs;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface StaffService {
+    List<Departs> findAllDeparts();
+
     Staffs save(Staffs entity);
 
     List<Staffs> saveAll(List<Staffs> entities);

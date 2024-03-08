@@ -1,6 +1,8 @@
 package com.phihongson.qlnv_crud.service;
 
+import com.phihongson.qlnv_crud.models.Departs;
 import com.phihongson.qlnv_crud.models.Staffs;
+import com.phihongson.qlnv_crud.repository.DepartRepository;
 import com.phihongson.qlnv_crud.repository.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +14,12 @@ import java.util.Optional;
 public class StaffServiceImpl implements  StaffService{
     @Autowired
     StaffRepository staffRepository;
-
+    @Autowired
+    DepartRepository departRepository;
+    @Override
+    public List<Departs> findAllDeparts(){
+        return (List<Departs>) departRepository.findAll();
+    }
     @Override
     public Staffs save(Staffs entity) {
         return staffRepository.save(entity);
